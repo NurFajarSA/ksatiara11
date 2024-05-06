@@ -1,118 +1,89 @@
+import Link from "next/link";
 import Image from "next/image";
-import { Inter } from "next/font/google";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+import { Merriweather } from "next/font/google";
+import hero from "/public/images/hero..jpg";
+import akif from "/public/images/akif.jpg"
+import mutia from "/public/images/mutia.jpg"
+import { useState } from "react";
+import { useMediaQuery } from 'react-responsive';
 
-const inter = Inter({ subsets: ["latin"] });
+const Merri = Merriweather({
+  subsets: ["latin"],
+  weight: "700"
+});
+
+const DynamicHamburger = dynamic(() => import('hamburger-react').then(mod => mod.Sling), { ssr: false });
 
 export default function Home() {
+  const [isOpen, setOpen] = useState(false)
+  const isMobile = useMediaQuery({ maxWidth: 950 });
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Head>
+        <title>Ksatiara Forbes 30 Under 30</title>
+      </Head>
+      <main className='flex min-h-screen flex-col'>
+        <nav className="w-full shadow-md">
+          <div className={`w-100 h-[50px] bg-black text-center text-white font-bold flex items-center justify-center ${Merri.className}`}>Ksatiara 11</div>
+          <div className="w-100 h-[50px] flex justify-between items-center px-5">
+            <div className=" font-semibold">Rumah Ke<span className=" text-red-500">pemimpin</span>an</div>
+            {isMobile ?
+              (<DynamicHamburger toggled={isOpen} toggle={setOpen} size={20} />)
+              :
+              (
+                <div className="flex gap-5 tab-nav">
+                  <Link className=" hover:text-red-600" href={'/'}>Home</Link>
+                  <Link className=" hover:text-red-600" href={'/awardee'}>Awardee</Link>
+                  <Link className=" hover:text-red-600" href={'/'}>Squads</Link>
+                  <Link className=" hover:text-red-600" href={'/'}>Moments</Link>
+                </div>
+              )
+            }
+          </div>
+        </nav>
+        <div className="flex justify-center items-center flex-col gap-1 md:gap-5 mt-10 mb-3">
+          <h1 className={` text-xl md:text-[50px] font-bold ${Merri.className}`}>THE FUTURE FORBES 30 UNDER 30</h1>
+          <div className="text-sm ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          <div>Logo</div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+        <div className="w-full mt-2 md:mt-10">
+          <Image src={hero} layout="responsive" width={100} height={500} className=" object-cover" alt="hero element" />
+        </div>
+        <div className="w-full p-[80px] flex flex-col md:flex-row justify-center items-center gap-[100px]">
+          <div className="relative w-full max-w-[300px] h-[350px] shadow-md ">
+            <Image src={akif} layout="fill" objectFit="cover" alt="akif foto" />
+          </div>
+          <div className="relative w-full max-w-[300px] h-[350px] shadow-md">
+            <Image src={mutia} layout="fill" objectFit="cover" alt="mutia foto" />
+          </div>
+        </div>
+        <div className="w-full flex justify-center items-center p-5">
+          <div className="border border-t-black flex flex-col w-full py-10 gap-5">
+            <h1 className=" font-semibold">HIGHLIGHTED MOMENTS</h1>
+            <div className="flex gap-10 ">
+              <div className="h-[200px] w-[200px] border border-black"></div>
+              <div className="h-[200px] w-[200px] border border-black"></div>
+              <div className="h-[200px] w-[200px] border border-black"></div>
+              <div className="h-[200px] w-[200px] border border-black"></div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full bg-black text-white px-5 p-10 ">
+          <h1>About Us</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget justo eget justo malesuada scelerisque. Ut commodo velit et eros ullamcorper, nec fermentum magna interdum. Nullam non fringilla lacus. Duis eu turpis quis justo pulvinar efficitur. Integer viverra tortor eu leo pulvinar, at aliquam lectus convallis.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed aliquam metus eget nulla consectetur, id rutrum purus commodo. Nulla facilisi. Sed vel purus luctus, consequat lorem eget, sollicitudin sapien. Proin viverra consequat arcu, vel consectetur purus feugiat at. Vivamus bibendum, neque non fermentum vehicula, sem tortor blandit elit, eu fermentum velit risus in eros.
+            Integer vitae ligula eu nulla posuere pretium. Sed id posuere mauris. In hac habitasse platea dictumst. Curabitur ut dolor eu lacus luctus bibendum. Nunc non tincidunt dolor. Ut faucibus gravida mi eget molestie. Sed at est non ligula venenatis volutpat. Vivamus eget elit nec justo vulputate lacinia. Maecenas vehicula, velit vitae fermentum efficitur, lectus leo tristique lorem, vitae eleifend orci metus vel felis.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        </div>
+        <footer className="w-full">
+          <div className="w-full flex flex-col justify-center items-center border border-black">
+            <div className=" p-3 border-b-2 border-black">Ksatiara 11</div>
+            <div className=" p-2">©2024 Rumah Kepemimpinan Regional 1 Jakarta</div>
+          </div>
+        </footer>
+      </main>
+    </>
   );
 }

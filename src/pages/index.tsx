@@ -5,7 +5,7 @@ import Head from "next/head";
 import { Merriweather } from "next/font/google";
 import hero from "/public/images/hero..jpg";
 import akif from "/public/images/akif.jpg"
-import mutia from "/public/images/mutia.jpg"
+import mutia from "/public/images/kamute.png"
 import { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
 

@@ -54,7 +54,7 @@ export default function Page() {
             <main className="px-5 flex flex-col gap-10 pb-10">
                 <div className="w-full flex-row md:flex">
                     <div className="w-full py-10 text-center md:text-start">
-                        <h1 className="text-[20px] md:text-[35px] font-bold">{data.name}</h1>
+                        <h1 className={`text-[20px] md:text-[35px] font-bold ${Merri.className}`}>{data.name}</h1>
                         <h2>{data.dream}</h2>
                     </div>
                     <div className="w-full">

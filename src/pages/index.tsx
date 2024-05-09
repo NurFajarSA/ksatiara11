@@ -33,18 +33,18 @@ export default function Home() {
               (<DynamicHamburger toggled={isOpen} toggle={setOpen} size={20} />)
               :
               (
-                <div className="flex gap-5 tab-nav">
-                  <Link className=" hover:text-red-600" href={'/'}>Home</Link>
-                  <Link className=" hover:text-red-600" href={'/awardee'}>Awardee</Link>
-                  <Link className=" hover:text-red-600" href={'/'}>Squads</Link>
-                  <Link className=" hover:text-red-600" href={'/'}>Moments</Link>
-                </div>
+                <ul className="flex gap-5 tab-nav">
+                  <Link className=" hover:text-red-600" href={'/'}><li>Home</li></Link>
+                  <Link className=" hover:text-red-600" href={'/awardee'}><li>Awardee</li></Link>
+                  <Link className=" hover:text-red-600" href={'/'}><li>Squads</li></Link>
+                  <Link className=" hover:text-red-600" href={'/'}><li>Moments</li></Link>
+                </ul>
               )
             }
           </div>
         </nav>
-        <div className="flex justify-center items-center flex-col gap-1 md:gap-5 mt-10 mb-3">
-          <h1 className={` text-xl md:text-[50px] font-bold ${Merri.className}`}>THE FUTURE FORBES 30 UNDER 30</h1>
+        <div className="flex justify-center items-center flex-col gap-1 md:gap-5 mt-5 md:mt-10 mb-3 text-center">
+          <h1 className={` text-xl text-[20px] md:text-[50px] px-2 font-bold ${Merri.className}`}>THE FUTURE FORBES 30 UNDER 30</h1>
           <div className="text-sm ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
           <div>Logo</div>
         </div>
@@ -63,10 +63,10 @@ export default function Home() {
           <div className="border border-t-black flex flex-col w-full py-10 gap-5">
             <h1 className=" font-semibold">HIGHLIGHTED MOMENTS</h1>
             <div className="flex gap-10 ">
-              <div className="h-[200px] w-[200px] border border-black"></div>
-              <div className="h-[200px] w-[200px] border border-black"></div>
-              <div className="h-[200px] w-[200px] border border-black"></div>
-              <div className="h-[200px] w-[200px] border border-black"></div>
+              <div className="h-[200px] w-full max-w-[200px] border border-black"></div>
+              <div className="h-[200px] w-full max-w-[200px] border border-black"></div>
+              <div className="h-[200px] w-full max-w-[200px] border border-black"></div>
+              <div className="h-[200px] w-full max-w-[200px] border border-black"></div>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function Home() {
           </p>
         </div>
         <footer className="w-full">
-          <div className="w-full flex flex-col justify-center items-center border border-black">
+          <div className="w-full flex flex-col justify-center items-center text-center border border-black">
             <div className=" p-3 border-b-2 border-black">Ksatiara 11</div>
             <div className=" p-2">©2024 Rumah Kepemimpinan Regional 1 Jakarta</div>
           </div>

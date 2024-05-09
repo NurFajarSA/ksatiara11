@@ -7,6 +7,8 @@ import mutia from "/public/images/kamute.png"
 import { profile } from "./api/data"
 import { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
+import { useRouter } from "next/router";
+import Head from "next/head";
 
 const Merri = Merriweather({
     subsets: ["latin"],
@@ -18,8 +20,13 @@ const DynamicHamburger = dynamic(() => import('hamburger-react').then(mod => mod
 export default function Awardee() {
     const [isOpen, setOpen] = useState(false)
     const isMobile = useMediaQuery({ maxWidth: 950 });
+    const router = useRouter();
+
     return (
         <>
+            <Head>
+                <title>The Awardees | Rumah Kepemimpinan</title>
+            </Head>
             <main>
                 <nav className="w-full shadow-md">
                     <div className={`w-100 h-[50px] bg-black text-center text-white font-bold flex items-center justify-center ${Merri.className}`}>Ksatiara 11</div>
@@ -29,12 +36,12 @@ export default function Awardee() {
                             (<DynamicHamburger toggled={isOpen} toggle={setOpen} size={20} />)
                             :
                             (
-                                <div className="flex gap-5 tab-nav">
-                                    <Link className=" hover:text-red-600" href={'/'}>Home</Link>
-                                    <Link className=" hover:text-red-600" href={'/awardee'}>Awardee</Link>
-                                    <Link className=" hover:text-red-600" href={'/'}>Squads</Link>
-                                    <Link className=" hover:text-red-600" href={'/'}>Moments</Link>
-                                </div>
+                                <ul className="flex gap-5 tab-nav">
+                                    <Link className=" hover:text-red-600" href={'/'}><li>Home</li></Link>
+                                    <Link className=" hover:text-red-600" href={'/awardee'}><li>Awardee</li></Link>
+                                    <Link className=" hover:text-red-600" href={'/'}><li>Squads</li></Link>
+                                    <Link className=" hover:text-red-600" href={'/'}><li>Moments</li></Link>
+                                </ul>
                             )
                         }
                     </div>
@@ -76,27 +83,16 @@ export default function Awardee() {
                             {
                                 profile.map((data, index) => (
                                     <div key={index} className="relative w-full max-w-[270px] h-[230px] md:h-[330px] text-white text-center hover:text-[#E1D599] shadow-2xl hover:shadow-[#E1D599] cursor-pointer">
-                                        <div className="w-full shadow-md">
-                                            <Image src={data.image} layout="fill" objectFit="cover" alt="mutia foto" />
-                                        </div>
+                                        <Link href={`/awardee/${data.nickname}`} passHref>
+                                            <div className="w-full shadow-md">
+                                                <Image src={data.image} layout="fill" objectFit="cover" alt="mutia foto" />
+                                            </div>
+                                        </Link>
                                         <div className="absolute w-full bottom-0 name mt-1 bg-black opacity-80 py-2">
                                             <div className="text-[10px] md:text-[14px]">{data.role} | {data.mainDream}</div>
                                             <h1 className="font-bold text-[10px] md:text-[16px]">{data.name}</h1>
                                         </div>
                                     </div>
-                                    // <div className="max-w-sm text-white text-center bg-transparent hover:text-[#E1D599] shadow-2xl hover:shadow-[#E1D599]">
-                                    //     <a href="#" className="flex items-center justify-center w-[270px] h-[230px] md:h-[330px]">
-                                    //         <div className="w-full h-full relative">
-                                    //             <Image src={data.image} layout="fill" objectFit="cover" alt='' />
-                                    //         </div>
-                                    //     </a>
-                                    //     <div className="p-2">
-                                    //         <div className="name mt-1">
-                                    //             <div>{data.role} | {data.mainDream}</div>
-                                    //             <h1 className="font-bold text-[10px] md:text-[16px]">{data.name}</h1>
-                                    //         </div>
-                                    //     </div>
-                                    // </div>
                                 ))
                             }
                         </div>
@@ -108,7 +104,7 @@ export default function Awardee() {
                         <div className=" p-2">©2024 Rumah Kepemimpinan Regional 1 Jakarta</div>
                     </div>
                 </footer>
-            </main>
+            </main >
         </>
     )
 }

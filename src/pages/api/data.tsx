@@ -543,7 +543,7 @@ export const profile = [
         "achievement3": "null",
         "education": "2020 - 2024: Javanese Language & Literature, Universitas Indonesia ",
         "message": "null",
-        "visdream": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/N59pvB8ZA3E?si=FP9IDjBp_JHJWSiJ\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen><\/iframe>",
+        "visdream": '<iframe width="560" height="315" src="https://www.youtube.com/embed/aBoN7pD3hgY?si=16vJR9teUntmU2H3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         "instagram": "null",
         "linkedin": "null",
         "twitter": null,

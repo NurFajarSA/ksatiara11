@@ -1,7 +1,6 @@
 import { profile } from "../api/data";
 import { useRouter } from 'next/router'
 import Image from "next/image";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
@@ -13,14 +12,12 @@ const Merri = Merriweather({
     weight: "700"
 });
 
-const DynamicHamburger = dynamic(() => import('hamburger-react').then(mod => mod.Sling), { ssr: false });
+const Navbar = dynamic(() => import("@/component/navbar"), { ssr: false });
+const Footer = dynamic(() => import("@/component/footer"), { ssr: false })
 
 export default function Page() {
     const router = useRouter();
     const { slug } = router.query;
-
-    const [isOpen, setOpen] = useState(false)
-    const isMobile = useMediaQuery({ maxWidth: 950 });
 
     const data = profile.find(item => item.nickname === slug);
 
@@ -33,24 +30,7 @@ export default function Page() {
             <Head>
                 <title>{data.nickname} | Ksatiara 11</title>
             </Head>
-            <nav className="w-full shadow-md">
-                <div className={`w-100 h-[50px] bg-black text-center text-white font-bold flex items-center justify-center ${Merri.className}`}>Ksatiara 11</div>
-                <div className="w-100 h-[50px] flex justify-between items-center px-5">
-                    <div className=" font-semibold">Rumah Ke<span className=" text-red-500">pemimpin</span>an</div>
-                    {isMobile ?
-                        (<DynamicHamburger toggled={isOpen} toggle={setOpen} size={20} />)
-                        :
-                        (
-                            <ul className="flex gap-5 tab-nav">
-                                <Link className=" hover:text-red-600" href={'/'}><li>Home</li></Link>
-                                <Link className=" hover:text-red-600" href={'/awardee'}><li>Awardee</li></Link>
-                                <Link className=" hover:text-red-600" href={'/'}><li>Squads</li></Link>
-                                <Link className=" hover:text-red-600" href={'/'}><li>Moments</li></Link>
-                            </ul>
-                        )
-                    }
-                </div>
-            </nav>
+            <Navbar />
             <main className="px-5 flex flex-col gap-10 pb-10">
                 <div className="w-full flex-row md:flex">
                     <div className="w-full py-10 text-center md:text-start">
@@ -95,23 +75,21 @@ export default function Page() {
                         <div className="w-[250px] h-[300px] bg-[#D9D9D9]"></div>
                     </div>
                 </div>
-                <div className="visualisasi_mimpi w-full flex flex-col justify-center items-center gap-5 font-bold">
-                    {
-                        (data.visdream === "null") ?
-                            <></> :
-                            <>
+                {
+                    (data.visdream === "null") ?
+                        <></> :
+                        <>
+                            <div className="visualisasi_mimpi text-center md:text-start w-full flex flex-col gap-5 font-bold">
                                 <h1>{data.nickname}'s dream visualization</h1>
-                                <div className=" vismim rounded-lg shadow-md" dangerouslySetInnerHTML={{ __html: data.visdream }} />
-                            </>
-                    }
-                </div>
+                                {/* <div className=" vismim rounded-lg " dangerouslySetInnerHTML={{ __html: data.visdream }} /> */}
+                                <div className="vismim w-full max-w-[560px] h-[315px] rounded-md">
+                                    {data.visdream}
+                                </div>
+                            </div>
+                        </>
+                }
             </main>
-            <footer className="w-full">
-                <div className="w-full flex flex-col justify-center items-center text-center border-t border-black">
-                    <div className=" p-3 border-b border-black w-full">Ksatiara 11</div>
-                    <div className=" p-2">©2024 Rumah Kepemimpinan Regional 1 Jakarta</div>
-                </div>
-            </footer>
+            <Footer />
         </>
     )
 }

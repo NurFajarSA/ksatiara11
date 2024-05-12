@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Head from "next/head";
 import { Merriweather } from "next/font/google";
-import hero from "/public/images/hero..jpg";
-import akif from "/public/images/akif.jpg"
-import mutia from "/public/images/kamute.png"
+import hero from "/public/images/fotbar/fotbar.JPG";
+import ksatria from "/public/images/fotbar/ksatria.JPG"
+import tiara from "/public/images/fotbar/tiara.JPG"
+import amazingrace from "/public/images/fotbar/amazingRace.png"
+import itikaf from "/public/images/fotbar/itikaf.jpg"
+import rihlah from "/public/images/fotbar/rihlah-crop.jpg"
+import NLC from "/public/images/fotbar/NLC.JPG"
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from 'react-responsive';
@@ -92,45 +96,93 @@ export default function Home() {
           <Image src={hero} layout="responsive" width={100} height={500} className=" object-cover" alt="hero element" />
         </div>
         <div className="flex flex-col justify-center items-center w-full text-center py-[100px]">
-          <h1 className="font-semibold text-[40px]">The Home Where We Grew Together</h1>
+          <h1 className="font-semibold text-dark text-[40px]">The Home Where We Grew Together</h1>
           <p className="text-[22px]">"Live with the giants!"</p>
         </div>
-        <div className="w-full p-[20px] md:p-[90px] flex flex-col md:flex-grow justify-center items-center gap-[60px] md:gap-[50px]">
-          <div className="max-w-sm text-black text-center shadow-2xl dark:bg-gray-800 dark:border-gray-700 hover:text-[#E1D599] hover:shadow-[#E1D599]">
-            <a href="#" className="flex items-center justify-center w-[300px] h-[350px]">
-              <div className="w-full h-full relative">
-                <Image src={akif} layout="fill" objectFit="cover" alt='' />
-              </div>
+        <div className="w-full p-[20px] md:p-[90px] flex flex-col md:flex-row justify-center items-center gap-[60px] md:gap-[50px]">
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <Image className="rounded-t-lg" src={ksatria} alt="" />
             </a>
-            <div className="p-2">
-              <div className="name mt-1">
-                <div>Supervisor | Entrepreneur</div>
-                <h1 className="font-bold text-[24px] md:text-[28px]">M AKIF THOLIBUL H</h1>
-              </div>
+            <div className="p-5">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Read more
+                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+              </a>
             </div>
           </div>
-          <div className="max-w-sm text-black text-center bg-transparent hover:text-[#E1D599] shadow-2xl hover:shadow-[#E1D599]">
-            <a href="#" className="flex items-center justify-center w-[300px] h-[350px]">
-              <div className="w-full h-full relative">
-                <Image src={mutia} layout="fill" objectFit="cover" alt='' />
-              </div>
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <Image className="rounded-t-lg" src={tiara} alt="" />
             </a>
-            <div className="p-2">
-              <div className="name mt-1">
-                <div>Supervisor | Entrepreneur</div>
-                <h1 className="font-bold text-[24px] md:text-[28px]">MUTIA AZIZAH</h1>
-              </div>
+            <div className="p-5">
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Read more
+                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
         <div className="w-full flex justify-center items-center p-5">
-          <div className="border border-t-black flex flex-col w-full py-10 gap-5">
+          <div className="border-t border-t-black flex flex-col w-full py-10 gap-5">
             <h1 className=" font-semibold">HIGHLIGHTED MOMENTS</h1>
-            <div className="flex gap-10 ">
-              <div className="h-[200px] w-full max-w-[200px] border border-black"></div>
-              <div className="h-[200px] w-full max-w-[200px] border border-black"></div>
-              <div className="h-[200px] w-full max-w-[200px] border border-black"></div>
-              <div className="h-[200px] w-full max-w-[200px] border border-black"></div>
+            <div className="moments flex flex-col md:flex-row w-full gap-2 ">
+              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <Image className="rounded-t-lg h-64 object-cover" src={amazingrace} alt="" />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Amazing Race Part 1 & 2</h5>
+                  </a>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </div>
+              </div>
+              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <Image className="rounded-t-lg h-64 object-cover" src={rihlah} alt="" />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Rihlah Ksatria & Tiara</h5>
+                  </a>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </div>
+              </div>
+              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <Image className="rounded-t-lg h-64 object-cover" src={NLC} alt="" />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">National Leadership Camp</h5>
+                  </a>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </div>
+              </div>
+              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <Image className="rounded-t-lg h-64 object-cover" src={itikaf} alt="" />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Ramadhan I'tikaf</h5>
+                  </a>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

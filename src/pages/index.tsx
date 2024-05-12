@@ -95,7 +95,7 @@ export default function Home() {
           <h1 className="font-semibold text-[40px]">The Home Where We Grew Together</h1>
           <p className="text-[22px]">"Live with the giants!"</p>
         </div>
-        <div className="w-full p-[20px] md:p-[90px] flex flex-col md:flex-grow justify-center items-center gap-[60px] md:gap-[50px]">
+        <div className="w-full p-[20px] md:p-[90px] flex flex-col md:flex-row justify-center items-center gap-[60px] md:gap-[50px]">
           <div className="max-w-sm text-black text-center shadow-2xl dark:bg-gray-800 dark:border-gray-700 hover:text-[#E1D599] hover:shadow-[#E1D599]">
             <a href="#" className="flex items-center justify-center w-[300px] h-[350px]">
               <div className="w-full h-full relative">

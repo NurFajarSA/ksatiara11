@@ -2,8 +2,6 @@ import { profile } from "../api/data";
 import { useRouter } from 'next/router'
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useState } from "react";
-import { useMediaQuery } from 'react-responsive';
 import { Merriweather } from "next/font/google";
 import Head from "next/head";
 
@@ -55,14 +53,6 @@ export default function Page() {
                             <div className="font-bold border-b border-black">Education</div>
                             <div>{data.education}</div>
                         </div>
-                        {/* <div className="achievement">
-                            <div className="font-bold border-b border-black">Achievements</div>
-                            <ol className="flex flex-col gap-3">
-                                <li>• {data.achievement1}</li>
-                                <li>• {data.achievement2}</li>
-                                <li>• {data.achievement3}</li>
-                            </ol>
-                        </div> */}
                         <div className="message">
                             <div className="font-bold border-b border-black">Message</div>
                             <div>{data.message}</div>
@@ -76,18 +66,14 @@ export default function Page() {
                     </div>
                 </div>
                 {
-                    (data.visdream === "null") ?
-                        <></> :
-                        <>
-                            <div className="visualisasi_mimpi text-center md:text-start w-full flex flex-col gap-5 font-bold">
-                                <h1>{data.nickname}'s dream visualization</h1>
-                                {/* <div className=" vismim rounded-lg " dangerouslySetInnerHTML={{ __html: data.visdream }} /> */}
-                                <div className="vismim w-full max-w-[560px] h-[315px] rounded-md">
-                                    {data.visdream}
-                                </div>
-                            </div>
-                        </>
+                    (data.visdream === null) ? null : (
+                        <div className="visualisasi_mimpi text-center md:text-start w-full flex flex-col gap-5 font-bold">
+                            <h1>{data.nickname}'s dream visualization</h1>
+                            <div className="vismim rounded-lg w-full max-w-[560px] h-[315px]" dangerouslySetInnerHTML={{ __html: data.visdream }} />
+                        </div>
+                    )
                 }
+
             </main>
             <Footer />
         </>

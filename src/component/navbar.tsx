@@ -28,7 +28,7 @@ export default function Navbar() {
         return () => {
             window.removeEventListener("scroll", setNavbar);
         };
-    }, []); // Empty dependency array ensures the effect runs only once after mount
+    }, []);
 
     const isMobile = useMediaQuery({ maxWidth: 950 });
 

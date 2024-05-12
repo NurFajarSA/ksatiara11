@@ -1,48 +1,27 @@
-import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import { Merriweather } from "next/font/google";
 import hero from "/public/images/hero..jpg";
 import akif from "/public/images/akif.jpg"
 import mutia from "/public/images/kamute.png"
-import { useState } from "react";
-import { useMediaQuery } from 'react-responsive';
+import dynamic from "next/dynamic";
+
+const Navbar = dynamic(() => import("@/component/navbar"), { ssr: false });
+const Footer = dynamic(() => import("@/component/footer"), { ssr: false })
 
 const Merri = Merriweather({
   subsets: ["latin"],
   weight: "700"
 });
 
-const DynamicHamburger = dynamic(() => import('hamburger-react').then(mod => mod.Sling), { ssr: false });
-
 export default function Home() {
-  const [isOpen, setOpen] = useState(false)
-  const isMobile = useMediaQuery({ maxWidth: 950 });
   return (
     <>
       <Head>
         <title>Ksatiara Forbes 30 Under 30</title>
       </Head>
       <main className='flex min-h-screen flex-col'>
-        <nav className="w-full shadow-md">
-          <div className={`w-100 h-[50px] bg-black text-center text-white font-bold flex items-center justify-center ${Merri.className}`}>Ksatiara 11</div>
-          <div className="w-100 h-[50px] flex justify-between items-center px-5">
-            <div className=" font-semibold">Rumah Ke<span className=" text-red-500">pemimpin</span>an</div>
-            {isMobile ?
-              (<DynamicHamburger toggled={isOpen} toggle={setOpen} size={20} />)
-              :
-              (
-                <ul className="flex gap-5 tab-nav">
-                  <Link className=" hover:text-red-600" href={'/'}><li>Home</li></Link>
-                  <Link className=" hover:text-red-600" href={'/awardee'}><li>Awardee</li></Link>
-                  <Link className=" hover:text-red-600" href={'/'}><li>Squads</li></Link>
-                  <Link className=" hover:text-red-600" href={'/'}><li>Moments</li></Link>
-                </ul>
-              )
-            }
-          </div>
-        </nav>
+        <Navbar />
         <div className="flex justify-center items-center flex-col gap-1 md:gap-5 mt-5 md:mt-10 mb-3 text-center">
           <h1 className={` text-xl text-[20px] md:text-[50px] px-2 font-bold ${Merri.className}`}>THE FUTURE FORBES 30 UNDER 30</h1>
           <div className="text-sm ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -51,12 +30,32 @@ export default function Home() {
         <div className="w-full mt-2 md:mt-10">
           <Image src={hero} layout="responsive" width={100} height={500} className=" object-cover" alt="hero element" />
         </div>
-        <div className="w-full p-[80px] flex flex-col md:flex-row justify-center items-center gap-[100px]">
-          <div className="relative w-full max-w-[300px] h-[350px] shadow-md ">
-            <Image src={akif} layout="fill" objectFit="cover" alt="akif foto" />
+        <div className="w-full p-[20px] md:p-[90px] flex flex-col md:flex-row justify-center items-center gap-[60px] md:gap-[50px]">
+          <div className="max-w-sm text-black text-center dark:bg-gray-800 dark:border-gray-700 hover:text-[#E1D599] shadow-2xl hover:shadow-[#E1D599]">
+            <a href="#" className="flex items-center justify-center w-[300px] h-[350px]">
+              <div className="w-full h-full relative">
+                <Image src={akif} layout="fill" objectFit="cover" alt='' />
+              </div>
+            </a>
+            <div className="p-2">
+              <div className="name mt-1">
+                <div>Supervisor | Entrepreneur</div>
+                <h1 className="font-bold text-[24px] md:text-[28px]">M AKIF THOLIBUL H</h1>
+              </div>
+            </div>
           </div>
-          <div className="relative w-full max-w-[300px] h-[350px] shadow-md">
-            <Image src={mutia} layout="fill" objectFit="cover" alt="mutia foto" />
+          <div className="max-w-sm text-black text-center bg-transparent hover:text-[#E1D599] shadow-2xl hover:shadow-[#E1D599]">
+            <a href="#" className="flex items-center justify-center w-[300px] h-[350px]">
+              <div className="w-full h-full relative">
+                <Image src={mutia} layout="fill" objectFit="cover" alt='' />
+              </div>
+            </a>
+            <div className="p-2">
+              <div className="name mt-1">
+                <div>Supervisor | Entrepreneur</div>
+                <h1 className="font-bold text-[24px] md:text-[28px]">MUTIA AZIZAH</h1>
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-full flex justify-center items-center p-5">
@@ -77,12 +76,7 @@ export default function Home() {
             Integer vitae ligula eu nulla posuere pretium. Sed id posuere mauris. In hac habitasse platea dictumst. Curabitur ut dolor eu lacus luctus bibendum. Nunc non tincidunt dolor. Ut faucibus gravida mi eget molestie. Sed at est non ligula venenatis volutpat. Vivamus eget elit nec justo vulputate lacinia. Maecenas vehicula, velit vitae fermentum efficitur, lectus leo tristique lorem, vitae eleifend orci metus vel felis.
           </p>
         </div>
-        <footer className="w-full">
-          <div className="w-full flex flex-col justify-center items-center text-center border border-black">
-            <div className=" p-3 border-b-2 border-black">Ksatiara 11</div>
-            <div className=" p-2">©2024 Rumah Kepemimpinan Regional 1 Jakarta</div>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </>
   );

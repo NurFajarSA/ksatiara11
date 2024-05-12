@@ -103,6 +103,11 @@ export default function Home() {
           <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
               <Image className="rounded-t-lg" src={ksatria} alt="" />
+          <div className="max-w-sm text-black text-center shadow-2xl dark:bg-gray-800 dark:border-gray-700 hover:text-[#E1D599] hover:shadow-[#E1D599]">
+            <a href="#" className="flex items-center justify-center w-[300px] h-[350px]">
+              <div className="w-full h-full relative">
+                <Image src={tiara} layout="fill" objectFit="cover" alt='' />
+              </div>
             </a>
             <div className="p-5">
               <a href="#">

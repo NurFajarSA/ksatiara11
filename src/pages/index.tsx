@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Head from "next/head";
 import { Merriweather } from "next/font/google";
-import hero from "/public/images/fotbar/fotbar.JPG";
-import ksatria from "/public/images/fotbar/ksatria.JPG"
-import tiara from "/public/images/fotbar/tiara.JPG"
 import amazingrace from "/public/images/fotbar/amazingRace.png"
 import itikaf from "/public/images/fotbar/itikaf.jpg"
 import rihlah from "/public/images/fotbar/rihlah-crop.jpg"
-import NLC from "/public/images/fotbar/NLC.JPG"
+import hero from "/public/images/fotbar/fotbar.jpg"
+import ksatria from "/public/images/fotbar/ksatria.jpg"
+import tiara from "/public/images/fotbar/tiara.jpg"
+import NLC from "/public/images/fotbar/NLC.jpg"
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from 'react-responsive';

@@ -28,7 +28,7 @@ export default function Awardee() {
                     <div className="spv p-5 mx-5 flex flex-col justify-center items-center border-b border-[#E1D599]">
                         <h1 className={` mb-3 text-xl md:text-[50px] font-bold text-[#E1D599] ${Merri.className}`}>THE AWARDEES</h1>
                         <div className="w-full p-[20px] md:p-[90px] flex flex-col md:flex-row justify-center items-center gap-[60px] md:gap-[50px]">
-                            <div className="max-w-sm text-white text-center bg-transparent hover:text-[#E1D599] shadow-2xl hover:shadow-[#E1D599]">
+                            <div className="max-w-sm text-white text-center dark:bg-gray-800 dark:border-gray-700 hover:text-[#E1D599] shadow-2xl hover:shadow-[#E1D599]">
                                 <a href="#" className="flex items-center justify-center w-[300px] h-[350px]">
                                     <div className="w-full h-full relative">
                                         <Image src={akif} layout="fill" objectFit="cover" alt='' />

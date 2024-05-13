@@ -4,10 +4,10 @@ import { Merriweather } from "next/font/google";
 import amazingrace from "/public/images/fotbar/amazingRace.png"
 import itikaf from "/public/images/fotbar/itikaf.jpg"
 import rihlah from "/public/images/fotbar/rihlah-crop.jpg"
-import hero from "/public/images/fotbar/fotbar.jpg"
-import ksatria from "/public/images/fotbar/ksatria.jpg"
-import tiara from "/public/images/fotbar/tiara.jpg"
-import NLC from "/public/images/fotbar/NLC.jpg"
+import hero from "/public/images/fotbar/fotbar.png"
+import ksatria from "/public/images/fotbar/ksatria.png"
+import tiara from "/public/images/fotbar/tiara.png"
+import NLC from "/public/images/fotbar/NLC.png"
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from 'react-responsive';

@@ -8,6 +8,7 @@ import hero from "/public/images/fotbar/fotbar.png"
 import ksatria from "/public/images/fotbar/ksatria.png"
 import tiara from "/public/images/fotbar/tiara.png"
 import NLC from "/public/images/fotbar/NLC.png"
+import livingyou from "/public/images/fotbar/livewithYou.jpg"
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from 'react-responsive';
@@ -96,8 +97,52 @@ export default function Home() {
           <Image src={hero} layout="responsive" width={100} height={500} className=" object-cover" alt="hero element" />
         </div>
         <div className="flex flex-col justify-center items-center w-full text-center py-[100px]">
-          <h1 className="font-semibold text-dark text-[40px]">The Home Where We Grew Together</h1>
-          <p className="text-[22px]">"Live with the giants!"</p>
+          <h1 className="font-semibold text-dark text-[40px]">The Home Where <span className='text-[#0066B2] font-semibold'>We Grew</span> Together</h1>
+          <p className="text-[22px]">We live with the value.</p>
+        </div>
+        <div className="value grid grid-cols-3 md:flex text-center text-white">
+          <div className="w-full h-[300px] bg-[#0066B2]">
+            <h1 className="text-[32px] p-5">R</h1>
+            <div className="text-[21px]">Rendah Hati</div>
+            <div>lorem ipsum</div>
+          </div>
+          <div className="w-full h-[300px] bg-[#0c81da]">
+            <h1 className="text-[32px] p-5">O</h1>
+            <div className="text-[21px]">Objective</div>
+            <div>Lorem ipsum</div>
+          </div>
+          <div className="w-full h-[300px]  bg-[#0e8eef]">
+            <h1 className="text-[32px] p-5">O</h1>
+            <div className="text-[21px]">Open-mind</div>
+            <div>Lorem ipsum</div>
+          </div>
+          <div className="w-full h-[300px] bg-[#E1D599]">
+            <h1 className="text-[32px] p-5">M</h1>
+            <div className="text-[21px]">Moderat</div>
+            <div>Lorem ipsum</div>
+          </div>
+          <div className="w-full h-[300px] bg-[#e4d172]">
+            <h1 className="text-[32px] p-5">P</h1>
+            <div className="text-[21px]">Prestatif</div>
+            <div>Lorem ipsum</div>
+          </div>
+          <div className="w-full h-[300px] bg-[#e3cb55]">
+            <h1 className="text-[32px] p-5">k</h1>
+            <div className="text-[21px]">Kontributif</div>
+            <div>Lorem ipsum</div>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center w-full text-center py-[100px]">
+          <h1 className="font-semibold text-dark text-[40px]">We Do<span className='text-[#0066B2] font-semibold'> a Process </span>Together</h1>
+          <p className="text-[22px]">We try together, we fail together, then we learn together.</p>
+        </div>
+        <div className="relative h-screen w-full">
+          <Image src={livingyou} alt="" className="absolute inset-0 w-full h-full object-cover filter" />
+          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center md:h-[200px] md:w-[320px] p-5 text-center md:bg-white bg-opacity-90 rounded-md md:ml-10 md:mt-10">
+            <h1 className="text-[32px] text-[#0e8eef] font-bold">Living with you</h1>
+            <p className="text-lg text-white md:text-black mt-4">Is a beautiful blessing I've ever get.</p>
+          </div>
         </div>
         <div className="w-full p-[20px] md:p-[90px] flex flex-col md:flex-row justify-center items-center gap-[60px] md:gap-[50px]">
           <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -187,7 +232,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full bg-black text-white px-5 p-10 ">
-          <h1>About Us</h1>
+          <h1 className="text-[28px]">So, Who We Are?</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget justo eget justo malesuada scelerisque. Ut commodo velit et eros ullamcorper, nec fermentum magna interdum. Nullam non fringilla lacus. Duis eu turpis quis justo pulvinar efficitur. Integer viverra tortor eu leo pulvinar, at aliquam lectus convallis.
             Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed aliquam metus eget nulla consectetur, id rutrum purus commodo. Nulla facilisi. Sed vel purus luctus, consequat lorem eget, sollicitudin sapien. Proin viverra consequat arcu, vel consectetur purus feugiat at. Vivamus bibendum, neque non fermentum vehicula, sem tortor blandit elit, eu fermentum velit risus in eros.
             Integer vitae ligula eu nulla posuere pretium. Sed id posuere mauris. In hac habitasse platea dictumst. Curabitur ut dolor eu lacus luctus bibendum. Nunc non tincidunt dolor. Ut faucibus gravida mi eget molestie. Sed at est non ligula venenatis volutpat. Vivamus eget elit nec justo vulputate lacinia. Maecenas vehicula, velit vitae fermentum efficitur, lectus leo tristique lorem, vitae eleifend orci metus vel felis.

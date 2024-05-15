@@ -4,6 +4,9 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Merriweather } from "next/font/google";
 import Head from "next/head";
+import linkedin from "/public/images/icon/linkedin.png"
+import instagram from "/public/images/icon/instagram.png"
+import twitter from "/public/images/icon/twitter.png"
 
 const Merri = Merriweather({
     subsets: ["latin"],
@@ -31,9 +34,28 @@ export default function Page() {
             <Navbar />
             <main className="px-5 flex flex-col gap-10 pb-10">
                 <div className="w-full flex-row md:flex">
-                    <div className="w-full py-10 text-center md:text-start">
-                        <h1 className={`text-[20px] md:text-[35px] font-bold ${Merri.className}`}>{data.name}</h1>
-                        <h2>{data.dream}</h2>
+                    <div className="w-full py-10 pr-5 text-center md:text-start flex justify-center items-center md:justify-start md:items-start flex-col gap-10">
+                        <div>
+                            <h1 className={`text-[20px] md:text-[35px] font-bold ${Merri.className}`}>{data.name}</h1>
+                            <h2>{data.dream}</h2>
+                        </div>
+                        <ul className="flex gap-5">
+                            <li>
+                                <a href={data.instagram} target="_blank" rel="noopener noreferrer">
+                                    <Image className='h-full w-full max-w-[44px] max-h-[44px]' src={instagram} alt='instagram logo' />
+                                </a>
+                            </li>
+                            <li>
+                                <a href={data.linkedin} target="_blank" rel="noopener noreferrer">
+                                    <Image className='h-full w-full max-w-[44px] max-h-[44px]' src={linkedin} alt='linkedin logo' />
+                                </a>
+                            </li>
+                            <li>
+                                <a href={data.twitter} target="_blank" rel="noopener noreferrer">
+                                    <Image className='h-full w-full max-w-[44px] max-h-[44px]' src={twitter} alt='X logo' />
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <div className="w-full">
                         <Image src={data?.image} alt={data?.nickname} />

@@ -1,9 +1,10 @@
+import Image from "next/image"
+
 export default function Footer() {
     return (
-        <footer className="w-full">
-            <div className="w-full flex flex-col justify-center items-center border border-black">
-                <div className=" p-3 border-b-2 border-black">Ksatiara 11</div>
-                <div className=" p-2">©2024 Rumah Kepemimpinan Regional 1 Jakarta</div>
+        <footer className="footer items-center p-4 bg-neutral text-neutral-content text-white text-center border-t border-white">
+            <div className="w-full p-5 bg-black">
+                <div>© 2024 - Created with ♥️ by Kominfo Ksatiara 11</div>
             </div>
         </footer>
     )

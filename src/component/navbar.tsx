@@ -35,7 +35,7 @@ export default function Navbar() {
     return (
         <>
             {navFixed &&
-                <div className="flex fixed w-full z-50 transition-all duration-300 ease-in-out">
+                <div className="flex flex-col fixed w-full z-50 transition-all duration-300 ease-in-out">
                     <nav className="w-full shadow-md">
                         <div className={`flex bg-white w-full h-[60px] justify-between items-center px-5`}>
                             <div className="font-semibold">Rumah Ke<span className="text-red-500">pemimpin</span>an</div>
@@ -52,9 +52,19 @@ export default function Navbar() {
                                 )}
                         </div>
                     </nav>
+                    {isOpen &&
+                        <div className="w-full p-5 h-screen bg-white">
+                            <ul className="flex flex-col gap-5 tab-nav">
+                                <Link href={'/'}><li className="hover:text-red-600">Home</li></Link>
+                                <Link href={'/awardee'}><li className="hover:text-red-600">Awardee</li></Link>
+                                <Link href={'/'}><li className="hover:text-red-600">Squads</li></Link>
+                                <Link href={'/'}><li className="hover:text-red-600">Moments</li></Link>
+                            </ul>
+                        </div>
+                    }
                 </div>
             }
-            <div className="flex w-full">
+            <div className="flex flex-col w-full">
                 <nav className="w-full shadow-md">
                     <div className={`flex w-full h-[55px] bg-black text-center text-white font-bold items-center justify-center ${Merri.className}`}>Ksatiara 11</div>
                     <div className={`flex bg-white w-full h-[60px] justify-between items-center px-5`}>
@@ -72,6 +82,16 @@ export default function Navbar() {
                             )}
                     </div>
                 </nav>
+                {isOpen &&
+                    <div className="w-full p-5 h-screen bg-white">
+                        <ul className="flex flex-col gap-5 tab-nav">
+                            <Link href={'/'}><li className="hover:text-red-600">Home</li></Link>
+                            <Link href={'/awardee'}><li className="hover:text-red-600">Awardee</li></Link>
+                            <Link href={'/'}><li className="hover:text-red-600">Squads</li></Link>
+                            <Link href={'/'}><li className="hover:text-red-600">Moments</li></Link>
+                        </ul>
+                    </div>
+                }
             </div>
         </>
     )

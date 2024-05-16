@@ -8,7 +8,7 @@ import hero from "/public/images/fotbar/fotbar..png"
 import ksatria from "/public/images/fotbar/ksatria.png"
 import tiara from "/public/images/fotbar/tiara.png"
 import NLC from "/public/images/fotbar/NLC.png"
-import livingyou from "/public/images/fotbar/livewithYou.jpg"
+import livingyou from "/public/images/fotbar/livewithYou.png"
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from 'react-responsive';

@@ -8,6 +8,10 @@
   gap: 5px;
 } */
 
+* {
+  box-sizing: border-box;
+}
+
 .vismim iframe {
   border-radius: 10px;
   box-shadow: black;
@@ -16,3 +20,8 @@
 .moments {
   columns: 4;
 }
+
+/* .grid-image {
+  width: 100%;
+  columns: 3;
+} */

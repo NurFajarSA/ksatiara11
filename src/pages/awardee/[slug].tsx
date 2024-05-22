@@ -82,7 +82,9 @@ export default function Page() {
                     </div>
                     <div className="w-full flex flex-col justify-center items-center gap-10 font-bold">
                         <h1>{data.nickname}'s moments</h1>
-                        <div className="w-[250px] h-[300px] bg-[#D9D9D9]"></div>
+                        <div className="w-[250px] h-[300px] bg-[#D9D9D9]">
+                            {/* <Image width={100} height={100} src={data.momen1} alt={data.nickname} /> */}
+                        </div>
                         <div className="w-[250px] h-[300px] bg-[#D9D9D9]"></div>
                         <div className="w-[250px] h-[300px] bg-[#D9D9D9]"></div>
                     </div>

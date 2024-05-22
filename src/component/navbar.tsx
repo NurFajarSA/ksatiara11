@@ -46,7 +46,7 @@ export default function Navbar() {
                                     <ul className="flex gap-5 tab-nav">
                                         <Link href={'/'}><li className="hover:text-red-600">Home</li></Link>
                                         <Link href={'/awardee'}><li className="hover:text-red-600">Awardee</li></Link>
-                                        <Link href={'/'}><li className="hover:text-red-600">Squads</li></Link>
+                                        <Link href={'/squad'}><li className="hover:text-red-600">Squads</li></Link>
                                         <Link href={'/'}><li className="hover:text-red-600">Moments</li></Link>
                                     </ul>
                                 )}
@@ -57,7 +57,7 @@ export default function Navbar() {
                             <ul className="flex flex-col gap-5 tab-nav">
                                 <Link href={'/'}><li className="hover:text-red-600">Home</li></Link>
                                 <Link href={'/awardee'}><li className="hover:text-red-600">Awardee</li></Link>
-                                <Link href={'/'}><li className="hover:text-red-600">Squads</li></Link>
+                                <Link href={'/squad'}><li className="hover:text-red-600">Squads</li></Link>
                                 <Link href={'/'}><li className="hover:text-red-600">Moments</li></Link>
                             </ul>
                         </div>
@@ -76,7 +76,7 @@ export default function Navbar() {
                                 <ul className="flex gap-5 tab-nav">
                                     <Link href={'/'}><li className="hover:text-red-600">Home</li></Link>
                                     <Link href={'/awardee'}><li className="hover:text-red-600">Awardee</li></Link>
-                                    <Link href={'/'}><li className="hover:text-red-600">Squads</li></Link>
+                                    <Link href={'/squad'}><li className="hover:text-red-600">Squads</li></Link>
                                     <Link href={'/'}><li className="hover:text-red-600">Moments</li></Link>
                                 </ul>
                             )}
@@ -87,7 +87,7 @@ export default function Navbar() {
                         <ul className="flex flex-col gap-5 tab-nav">
                             <Link href={'/'}><li className="hover:text-red-600">Home</li></Link>
                             <Link href={'/awardee'}><li className="hover:text-red-600">Awardee</li></Link>
-                            <Link href={'/'}><li className="hover:text-red-600">Squads</li></Link>
+                            <Link href={'/squad'}><li className="hover:text-red-600">Squads</li></Link>
                             <Link href={'/'}><li className="hover:text-red-600">Moments</li></Link>
                         </ul>
                     </div>

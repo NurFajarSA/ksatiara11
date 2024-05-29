@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { Merriweather } from "next/font/google";
 import { useState, useEffect } from "react";
 import Dropdown, { Option } from 'react-dropdown';
-import 'react-dropdown/style.css';  // Pastikan untuk mengimpor stylesheet untuk Dropdown
+import 'react-dropdown/style.css';
 import { photoArray } from "./api/dataSquad";
 import Image from "next/image";
 
@@ -15,13 +15,21 @@ const Merri = Merriweather({
     weight: "700"
 });
 
-const options: string[] = [
-    'Ksatria 1', 'Ksatria 2', 'Ksatria 3', 'Ksatria 4', 'Tiara 1', 'Tiara 2', 'Tiara 3', 'Tiara 4', 'Tiara 5'
+const options: Option[] = [
+    { value: 'Ksatria 1', label: 'Ksatria 1' },
+    { value: 'Ksatria 2', label: 'Ksatria 2' },
+    { value: 'Ksatria 3', label: 'Ksatria 3' },
+    { value: 'Ksatria 4', label: 'Ksatria 4' },
+    { value: 'Tiara 1', label: 'Tiara 1' },
+    { value: 'Tiara 2', label: 'Tiara 2' },
+    { value: 'Tiara 3', label: 'Tiara 3' },
+    { value: 'Tiara 4', label: 'Tiara 4' },
+    { value: 'Tiara 5', label: 'Tiara 5' }
 ];
 const defaultOption = options[0];
 
 export default function Squads() {
-    const [selectedOption, setSelectedOption] = useState<string>(defaultOption);
+    const [selectedOption, setSelectedOption] = useState<string>(defaultOption.value);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const onSelect = (option: Option) => {
@@ -125,7 +133,7 @@ export default function Squads() {
                         <Dropdown
                             options={options}
                             onChange={onSelect}
-                            value={selectedOption}
+                            value={options.find(option => option.value === selectedOption)}
                             placeholder="Select an option"
                         />
                     </div>

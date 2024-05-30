@@ -53,7 +53,7 @@ export default function Squads() {
                     <>
                         {photoArray.ksat1.map((photo) => (
                             <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" />
+                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
                             </div>
                         ))}
                     </>
@@ -63,7 +63,7 @@ export default function Squads() {
                     <>
                         {photoArray.ksat2.map((photo) => (
                             <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" />
+                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
                             </div>
                         ))}
                     </>
@@ -73,7 +73,7 @@ export default function Squads() {
                     <>
                         {photoArray.ksat3.map((photo) => (
                             <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" />
+                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
                             </div>
                         ))}
                     </>
@@ -83,7 +83,7 @@ export default function Squads() {
                     <>
                         {photoArray.ksat4.map((photo) => (
                             <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" />
+                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
                             </div>
                         ))}
                     </>
@@ -95,7 +95,7 @@ export default function Squads() {
                     <>
                         {photoArray.tiara2.map((photo) => (
                             <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" />
+                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
                             </div>
                         ))}
                     </>
@@ -107,7 +107,7 @@ export default function Squads() {
                     <>
                         {photoArray.tiara4.map((photo) => (
                             <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" />
+                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
                             </div>
                         ))}
                     </>

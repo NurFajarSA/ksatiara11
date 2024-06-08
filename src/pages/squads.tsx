@@ -24,7 +24,7 @@ const options = [
     { value: 'Tiara 5', label: 'Tiara 5' }
 ];
 
-export default function App() {
+export default function Squad() {
     const [selectedKey, setSelectedKey] = useState<string | number | null>(null);
 
     const handleAction = (key: string | number) => {

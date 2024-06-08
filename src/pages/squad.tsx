@@ -49,69 +49,21 @@ export default function Squads() {
 
         switch (selectedOption) {
             case 'Ksatria 1':
-                return (
-                    <>
-                        {photoArray.ksat1.map((photo) => (
-                            <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
-                            </div>
-                        ))}
-                    </>
-                );
+                return <p>Content for Tiara 1</p>;
             case 'Ksatria 2':
-                return (
-                    <>
-                        {photoArray.ksat2.map((photo) => (
-                            <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
-                            </div>
-                        ))}
-                    </>
-                );
+                return <p>Content for Tiara 1</p>;
             case 'Ksatria 3':
-                return (
-                    <>
-                        {photoArray.ksat3.map((photo) => (
-                            <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
-                            </div>
-                        ))}
-                    </>
-                );
+                return <p>Content for Tiara 1</p>;
             case 'Ksatria 4':
-                return (
-                    <>
-                        {photoArray.ksat4.map((photo) => (
-                            <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
-                            </div>
-                        ))}
-                    </>
-                );
+                return <p>Content for Tiara 1</p>;
             case 'Tiara 1':
                 return <p>Content for Tiara 1</p>;
             case 'Tiara 2':
-                return (
-                    <>
-                        {photoArray.tiara2.map((photo) => (
-                            <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
-                            </div>
-                        ))}
-                    </>
-                );
+                return <p>Content for Tiara 1</p>;
             case 'Tiara 3':
                 return <p>Content for Tiara 3</p>;
             case 'Tiara 4':
-                return (
-                    <>
-                        {photoArray.tiara4.map((photo) => (
-                            <div key={photo.id} className="grid-item py-3">
-                                <Image src={photo.url} alt={photo.alt} className="rounded-lg" width={500} height={500} />
-                            </div>
-                        ))}
-                    </>
-                );
+                return <p>Content for Tiara 1</p>;
             case 'Tiara 5':
                 return <p>Content for Tiara 5</p>;
             default:

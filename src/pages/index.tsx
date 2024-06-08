@@ -101,7 +101,7 @@ export default function Home() {
                 <ul className="flex flex-col gap-5 tab-nav">
                   <Link href={'/'}><li className="hover:text-red-600">Home</li></Link>
                   <Link href={'/awardee'}><li className="hover:text-red-600">Awardee</li></Link>
-                  <Link href={'/squad'}><li className="hover:text-red-600">Squads</li></Link>
+                  <Link href={'/squads'}><li className="hover:text-red-600">Squads</li></Link>
                   <Link href={'/'}><li className="hover:text-red-600">Moments</li></Link>
                 </ul>
               </div>
